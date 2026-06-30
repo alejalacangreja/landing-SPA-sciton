@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1125" role="img" aria-label="Placeholder image">
+  <rect width="900" height="1125" fill="#F4E9E3"/>
+  <path d="M0 0L900 1125M900 0L0 1125" stroke="#E6B9B4" stroke-width="2"/>
+  <rect x="40" y="40" width="820" height="1045" fill="none" stroke="#92644F" stroke-width="2" stroke-dasharray="10 8"/>
+  <text x="450" y="552" text-anchor="middle" font-family="Georgia, serif" font-size="30" fill="#7A5140">Hero placeholder</text>
+  <text x="450" y="592" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#6B5D54">4:5 — replace with spa/patient photography</text>
+</svg>

@@ -1,0 +1,38 @@
+/* ==========================================================================
+   THANK YOU PAGE — reuses .checklist / .contact-block / .final-cta from the
+   main component system; only the confirmation hero is page-specific.
+   ========================================================================== */
+
+.ty-confirmation {
+  padding-top: clamp(var(--space-8), 8vw, var(--space-10));
+  background: linear-gradient(180deg, var(--color-bg-surface-alt) 0%, var(--color-bg-page) 60%);
+}
+
+.ty-confirmation__inner {
+  max-width: 640px;
+  text-align: center;
+  display: grid;
+  justify-items: center;
+  gap: var(--space-4);
+}
+
+.ty-confirmation__icon {
+  display: grid;
+  place-items: center;
+  width: 80px;
+  height: 80px;
+  margin-bottom: var(--space-2);
+  color: var(--color-brand-primary);
+  background: var(--color-brand-secondary);
+  border-radius: var(--radius-pill);
+}
+
+.ty-confirmation__contact {
+  font-weight: 700;
+  font-size: var(--text-md);
+  color: var(--color-brand-primary);
+}
+
+.improve h2 {
+  margin-bottom: var(--space-4);
+}

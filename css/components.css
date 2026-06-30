@@ -1,0 +1,605 @@
+/* ==========================================================================
+   COMPONENTS — buttons, badges, cards, accordion, forms, carousel
+   ========================================================================== */
+
+/* ---------------------------------------------------------------------
+   Buttons
+   --------------------------------------------------------------------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-height: 48px;
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--radius-pill);
+  font-weight: 700;
+  font-size: var(--text-sm);
+  letter-spacing: var(--tracking-tight);
+  text-align: center;
+  transition: background-color var(--duration-fast) var(--ease-standard),
+    color var(--duration-fast) var(--ease-standard),
+    transform var(--duration-fast) var(--ease-standard),
+    box-shadow var(--duration-fast) var(--ease-standard);
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn--primary {
+  background: var(--color-brand-primary);
+  color: var(--color-text-inverse);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn--primary:hover {
+  background: var(--color-brand-primary-hover);
+  box-shadow: var(--shadow-md);
+}
+
+.btn--secondary {
+  background: var(--color-bg-surface);
+  color: var(--color-brand-primary);
+  border: 1.5px solid var(--color-brand-primary);
+}
+
+.btn--secondary:hover {
+  background: var(--color-bg-surface-alt);
+}
+
+.btn--ghost {
+  background: transparent;
+  color: var(--color-brand-primary);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  min-height: 44px;
+  padding-inline: var(--space-3);
+}
+
+.btn--ghost--inverse {
+  color: var(--color-text-inverse);
+}
+
+.btn--lg {
+  min-height: 52px;
+  padding-inline: var(--space-7);
+  font-size: var(--text-base);
+}
+
+.btn--full {
+  width: 100%;
+}
+
+/* ---------------------------------------------------------------------
+   Eyebrow / badge / microcopy
+   --------------------------------------------------------------------- */
+
+.eyebrow {
+  display: inline-block;
+  margin: 0 0 var(--space-4);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--color-brand-primary);
+}
+
+.eyebrow--tech {
+  font-family: var(--font-mono-tech);
+  color: var(--color-tech-accent-bright);
+}
+
+.microcopy {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  max-width: 60ch;
+}
+
+.bonus-reminder {
+  font-weight: 700;
+  color: var(--color-brand-accent);
+}
+
+/* ---------------------------------------------------------------------
+   Cards — symptom / wavelength / area
+   --------------------------------------------------------------------- */
+
+.symptom-card,
+.area-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-5) var(--space-3);
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  text-align: center;
+  font-weight: 600;
+  font-size: var(--text-sm);
+  box-shadow: var(--shadow-sm);
+}
+
+.symptom-card__icon,
+.area-card__icon {
+  width: 40px;
+  height: 40px;
+  color: var(--color-brand-primary);
+}
+
+.area-card {
+  flex-direction: row;
+  justify-content: flex-start;
+  text-align: left;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-5);
+}
+
+.area-card__icon {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+}
+
+.wavelength-card {
+  position: relative;
+  padding: var(--space-6) var(--space-5);
+  background: var(--color-bg-inverse-elevated);
+  border: 1px solid var(--color-border-inverse);
+  border-radius: var(--radius-card-tech);
+  color: var(--color-text-inverse);
+}
+
+.wavelength-card__index {
+  display: block;
+  font-family: var(--font-mono-tech);
+  font-size: var(--text-sm);
+  letter-spacing: var(--tracking-widest);
+  color: var(--color-tech-accent);
+  margin-bottom: var(--space-4);
+}
+
+.wavelength-card__nm {
+  display: block;
+  font-family: var(--font-mono-tech);
+  font-weight: 600;
+  font-size: var(--text-2xl);
+  color: var(--color-tech-accent-bright);
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+  margin-bottom: var(--space-4);
+}
+
+.wavelength-card__nm small {
+  font-size: var(--text-md);
+  font-weight: 500;
+  margin-left: var(--space-1);
+  color: var(--color-tech-accent);
+}
+
+.wavelength-card h3 {
+  font-family: var(--font-body);
+  color: var(--color-text-inverse);
+  margin-bottom: var(--space-2);
+}
+
+.wavelength-card p {
+  color: var(--color-text-inverse-muted);
+  font-size: var(--text-sm);
+  margin: 0;
+}
+
+/* ---------------------------------------------------------------------
+   Checklist
+   --------------------------------------------------------------------- */
+
+.checklist {
+  display: grid;
+  gap: var(--space-3);
+  margin: var(--space-6) 0;
+}
+
+@media (min-width: 560px) {
+  .checklist {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.checklist li {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-weight: 600;
+}
+
+.checklist__icon {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  padding: 3px;
+  color: var(--color-text-inverse);
+  background: var(--color-brand-primary);
+  border-radius: var(--radius-pill);
+}
+
+/* ---------------------------------------------------------------------
+   Value points (module 3)
+   --------------------------------------------------------------------- */
+
+.value-points {
+  display: grid;
+  gap: var(--space-3);
+  margin: var(--space-6) 0;
+}
+
+.value-points li {
+  position: relative;
+  padding-left: var(--space-6);
+  font-weight: 600;
+}
+
+.value-points li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.45em;
+  width: 10px;
+  height: 10px;
+  border-radius: var(--radius-pill);
+  background: var(--color-brand-secondary);
+  border: 2px solid var(--color-brand-primary);
+}
+
+/* ---------------------------------------------------------------------
+   Accordion (FAQ)
+   --------------------------------------------------------------------- */
+
+.accordion__item {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.accordion__item h3 {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+.accordion__trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  width: 100%;
+  min-height: 56px;
+  padding: var(--space-4) 0;
+  text-align: left;
+  font-weight: 700;
+  font-size: var(--text-md);
+}
+
+.accordion__chevron {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  color: var(--color-brand-primary);
+  transition: transform var(--duration-fast) var(--ease-standard);
+}
+
+.accordion__trigger[aria-expanded="true"] .accordion__chevron {
+  transform: rotate(180deg);
+}
+
+.accordion__panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows var(--duration-base) var(--ease-standard);
+}
+
+.accordion__panel > p {
+  overflow: hidden;
+  margin: 0;
+  color: var(--color-text-muted);
+}
+
+.accordion__item:has(.accordion__trigger[aria-expanded="true"]) .accordion__panel {
+  grid-template-rows: 1fr;
+}
+
+.accordion__item:has(.accordion__trigger[aria-expanded="true"]) .accordion__panel > p {
+  padding-bottom: var(--space-4);
+}
+
+/* Fallback for browsers without :has() support: JS toggles this class too */
+.accordion__panel.is-open {
+  grid-template-rows: 1fr;
+}
+
+.accordion__panel.is-open > p {
+  padding-bottom: var(--space-4);
+}
+
+/* ---------------------------------------------------------------------
+   Forms
+   --------------------------------------------------------------------- */
+
+.consult-form {
+  display: grid;
+  gap: var(--space-5);
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-md);
+}
+
+.form-field {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.form-field label,
+.form-field legend {
+  font-weight: 600;
+  font-size: var(--text-sm);
+  padding: 0;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  min-height: 48px;
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-bg-page);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.form-field textarea {
+  min-height: 96px;
+  resize: vertical;
+}
+
+/* Invalid styling is driven entirely by the .is-invalid class that
+   form-validation.js applies on submit — relying on the native :invalid
+   pseudo-class here would redden every empty required field on first
+   load (these inputs have no placeholder, so :not(:placeholder-shown)
+   never excludes them). */
+.form-field input.is-invalid {
+  border-color: var(--color-error);
+}
+
+.form-field__error {
+  margin: 0;
+  font-size: var(--text-xs);
+  color: var(--color-error);
+  min-height: 1em;
+}
+
+.form-field--radio-group {
+  border: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  margin: 0;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-weight: 500;
+  min-height: 44px;
+}
+
+.radio-option input {
+  width: 20px;
+  height: 20px;
+}
+
+.form-status {
+  min-height: 1.2em;
+  font-weight: 700;
+  color: var(--color-success);
+}
+
+.phone-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: var(--space-5);
+  font-weight: 700;
+  font-size: var(--text-md);
+  color: var(--color-brand-primary);
+}
+
+/* ---------------------------------------------------------------------
+   Before / after carousel
+   --------------------------------------------------------------------- */
+
+.ba-carousel__track {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: var(--space-5);
+  padding-bottom: var(--space-3);
+  scrollbar-width: none;
+}
+
+.ba-carousel__track::-webkit-scrollbar {
+  display: none;
+}
+
+.ba-slide {
+  flex: 0 0 100%;
+  scroll-snap-align: center;
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .ba-slide {
+    flex-basis: calc(50% - var(--space-3));
+  }
+}
+
+.ba-slide__images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2);
+}
+
+.ba-slide__img {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border-radius: var(--radius-card);
+}
+
+.ba-slide__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ba-slide__label {
+  position: absolute;
+  bottom: var(--space-2);
+  left: var(--space-2);
+  padding: var(--space-1) var(--space-3);
+  background: var(--color-overlay-scrim);
+  color: var(--color-text-inverse);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: var(--tracking-wide);
+  border-radius: var(--radius-sm);
+}
+
+.ba-slide figcaption {
+  margin-top: var(--space-3);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  text-align: center;
+}
+
+.ba-slide__courtesy {
+  font-style: italic;
+}
+
+.ba-carousel__controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-5);
+  margin-top: var(--space-5);
+}
+
+.ba-carousel__arrow {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-pill);
+  background: var(--color-bg-surface);
+  border: 1.5px solid var(--color-border);
+  font-size: var(--text-md);
+}
+
+.ba-carousel__arrow:hover {
+  background: var(--color-bg-surface-alt);
+}
+
+.ba-carousel__dots {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.ba-carousel__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: var(--radius-pill);
+  background: var(--color-border);
+}
+
+.ba-carousel__dot.is-active {
+  background: var(--color-brand-primary);
+}
+
+/* ---------------------------------------------------------------------
+   Symptoms carousel (mobile) — native scroll-snap, no JS required
+   --------------------------------------------------------------------- */
+
+.symptoms-grid {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(132px, 1fr);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: var(--space-3);
+  padding-bottom: var(--space-3);
+  scrollbar-width: none;
+}
+
+.symptoms-grid::-webkit-scrollbar {
+  display: none;
+}
+
+.symptoms-grid > * {
+  scroll-snap-align: start;
+}
+
+@media (min-width: 768px) {
+  .symptoms-grid {
+    grid-auto-flow: row;
+    grid-template-columns: repeat(4, 1fr);
+    overflow-x: visible;
+  }
+}
+
+/* ---------------------------------------------------------------------
+   Areas grid
+   --------------------------------------------------------------------- */
+
+.areas-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-3);
+}
+
+@media (min-width: 768px) {
+  .areas-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .areas-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+/* ---------------------------------------------------------------------
+   Wavelength cards layout
+   --------------------------------------------------------------------- */
+
+.wavelength-cards {
+  display: grid;
+  gap: var(--space-5);
+}
+
+@media (min-width: 768px) {
+  .wavelength-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ---------------------------------------------------------------------
+   Placeholder image treatment
+   --------------------------------------------------------------------- */
+
+.placeholder-img {
+  width: 100%;
+  border-radius: var(--radius-lg);
+}

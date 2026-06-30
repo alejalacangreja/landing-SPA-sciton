@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Thank You | Regenerative Med Spa</title>
+<meta name="robots" content="noindex" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Philosopher:wght@400;700&family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="css/tokens.css" />
+<link rel="stylesheet" href="css/base.css" />
+<link rel="stylesheet" href="css/layout.css" />
+<link rel="stylesheet" href="css/components.css" />
+<link rel="stylesheet" href="css/thank-you.css" />
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a href="index.html" class="site-header__logo">
+      <img src="assets/images/brand/spa-logo-placeholder.svg" alt="Regenerative Med Spa" width="180" height="42" />
+    </a>
+    <div class="site-header__actions">
+      <a class="site-header__phone" href="tel:4077305600">407.730.5600</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- THANK YOU MODULE 1 -->
+  <section class="ty-confirmation" aria-labelledby="ty-heading">
+    <div class="container ty-confirmation__inner" data-reveal>
+      <span class="ty-confirmation__icon" aria-hidden="true">
+        <svg width="56" height="56" viewBox="0 0 56 56" fill="none"><circle cx="28" cy="28" r="27" stroke="currentColor" stroke-width="2"/><path d="M17 29l7 7 15-16" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+      <h1 id="ty-heading">Your consultation request has been received</h1>
+      <p>Thank you for reaching out to Regenerative Med Spa.</p>
+      <p>Our team will contact you soon to help you schedule your HALO TRIBRID consultation.</p>
+      <p>
+        During your consultation, we will review your skin concerns, discuss your goals and
+        determine whether this treatment is right for you.
+      </p>
+      <a class="btn btn--primary btn--lg" href="tel:4077305600">Call us now</a>
+      <p class="ty-confirmation__contact">407.730.5600</p>
+    </div>
+  </section>
+
+  <!-- THANK YOU MODULE 2 — reuses the .checklist component -->
+  <section class="improve" aria-labelledby="ty-prep-heading">
+    <div class="container" data-reveal>
+      <h2 id="ty-prep-heading">Before your consultation</h2>
+      <p>Start thinking about the concerns you would most like to improve:</p>
+      <ul class="checklist">
+        <li><svg class="checklist__icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Dark spots</li>
+        <li><svg class="checklist__icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Sun damage</li>
+        <li><svg class="checklist__icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Fine lines</li>
+        <li><svg class="checklist__icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Acne scars</li>
+        <li><svg class="checklist__icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Visible pores</li>
+        <li><svg class="checklist__icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Rough texture</li>
+        <li><svg class="checklist__icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Uneven tone</li>
+        <li><svg class="checklist__icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Dullness</li>
+        <li><svg class="checklist__icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Treatment areas such as face, neck, chest or hands</li>
+      </ul>
+      <p class="closing-copy">These details help our team create a better conversation during your visit.</p>
+    </div>
+  </section>
+
+  <!-- THANK YOU MODULE 3 — reuses the .contact-block component -->
+  <section class="final-cta" aria-labelledby="ty-visit-heading">
+    <div class="container final-cta__inner" data-reveal>
+      <h2 id="ty-visit-heading">Visit us in Lake Nona</h2>
+      <address class="contact-block">
+        Regenerative Med Spa<br />
+        10920 Moss Park Rd. Suite 218<br />
+        Orlando, FL 32832<br />
+        <a href="tel:4077305600">407.730.5600</a>
+      </address>
+      <div class="final-cta__ctas">
+        <a class="btn btn--primary btn--lg" href="tel:4077305600">Call 407.730.5600</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>&copy; <span id="current-year">2026</span> Regenerative Med Spa. HALO is a registered trademark and TRIBRID is a trademark of Sciton, Inc.</p>
+  </div>
+</footer>
+
+<script type="module" src="js/thank-you.js"></script>
+</body>
+</html>

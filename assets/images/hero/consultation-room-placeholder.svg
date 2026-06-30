@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" role="img" aria-label="Placeholder image">
+  <rect width="800" height="1000" fill="#F4E9E3"/>
+  <path d="M0 0L800 1000M800 0L0 1000" stroke="#E6B9B4" stroke-width="2"/>
+  <rect x="36" y="36" width="728" height="928" fill="none" stroke="#92644F" stroke-width="2" stroke-dasharray="10 8"/>
+  <text x="400" y="490" text-anchor="middle" font-family="Georgia, serif" font-size="26" fill="#7A5140">Consultation room placeholder</text>
+  <text x="400" y="524" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#6B5D54">4:5 — replace with consultation room photo</text>
+</svg>

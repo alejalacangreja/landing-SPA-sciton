@@ -1,0 +1,346 @@
+/* ==========================================================================
+   SECTIONS — per-module visual layout, in document order
+   Mobile-first: single column by default, expands at md (768px) / lg (1024px)
+   ========================================================================== */
+
+/* ---------------------------------------------------------------------
+   Inverse (tech-insert) section shell — module 4 only
+   --------------------------------------------------------------------- */
+
+.section--inverse {
+  background: var(--color-bg-inverse);
+  color: var(--color-text-inverse);
+}
+
+.section--inverse h2,
+.section--inverse h3 {
+  color: var(--color-text-inverse);
+}
+
+.section--inverse p {
+  color: var(--color-text-inverse-muted);
+}
+
+/* ---------------------------------------------------------------------
+   Module 1 — Hero
+   --------------------------------------------------------------------- */
+
+.hero {
+  padding-top: clamp(var(--space-7), 6vw, var(--space-9));
+  background: linear-gradient(180deg, var(--color-bg-surface-alt) 0%, var(--color-bg-page) 60%);
+}
+
+.hero__grid {
+  display: grid;
+  gap: var(--space-8);
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .hero__grid {
+    grid-template-columns: 1.05fr 0.95fr;
+  }
+}
+
+.hero__copy {
+  max-width: 56ch;
+}
+
+.hero h1 {
+  margin-bottom: var(--space-3);
+}
+
+.hero__subheadline {
+  font-size: var(--text-md);
+  font-weight: 600;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-5);
+}
+
+.bonus-callout-inline {
+  display: inline-block;
+  padding: var(--space-3) var(--space-5);
+  margin-bottom: var(--space-5);
+  background: var(--color-brand-secondary);
+  border-radius: var(--radius-md);
+  font-weight: 700;
+}
+
+.bonus-callout-inline p {
+  margin: 0;
+}
+
+.hero__ctas {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-4);
+}
+
+.hero__media .placeholder-img {
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  box-shadow: var(--shadow-lg);
+}
+
+/* ---------------------------------------------------------------------
+   Module 2 — Symptoms
+   --------------------------------------------------------------------- */
+
+.symptoms {
+  background: var(--color-bg-page);
+}
+
+/* ---------------------------------------------------------------------
+   Module 3 / 9 — Editorial block (spa positioning, consultation matters)
+   --------------------------------------------------------------------- */
+
+.editorial-block {
+  background: var(--color-bg-surface-alt);
+}
+
+.editorial-block__grid {
+  display: grid;
+  gap: var(--space-7);
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .editorial-block__grid {
+    grid-template-columns: 0.85fr 1.15fr;
+  }
+
+  .editorial-block--reverse .editorial-block__grid {
+    grid-template-columns: 1.15fr 0.85fr;
+  }
+
+  .editorial-block--reverse .editorial-block__media {
+    order: 2;
+  }
+}
+
+.editorial-block__media .placeholder-img {
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+.editorial-block__copy h2 {
+  margin-bottom: var(--space-4);
+}
+
+/* ---------------------------------------------------------------------
+   Module 4 — Wavelengths (tech insert)
+   --------------------------------------------------------------------- */
+
+.wavelengths {
+  position: relative;
+  overflow: hidden;
+}
+
+.wavelengths::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(60% 80% at 80% 0%, rgb(159 184 196 / 0.12), transparent 70%);
+  pointer-events: none;
+}
+
+/* signature "wavelength sweep" reveal — module 4 only */
+.wavelength-card {
+  overflow: hidden;
+}
+
+.wavelength-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg, transparent 0%, rgb(199 220 227 / 0.18) 45%, transparent 60%);
+  transform: translateX(-120%);
+  pointer-events: none;
+}
+
+.wavelength-card.is-visible::after {
+  animation: wavelength-sweep var(--duration-slow) var(--ease-out-soft) forwards;
+  animation-delay: calc(var(--reveal-index, 0) * var(--reveal-stagger-step) + var(--duration-fast));
+}
+
+@keyframes wavelength-sweep {
+  to {
+    transform: translateX(120%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wavelength-card::after {
+    display: none;
+  }
+}
+
+/* ---------------------------------------------------------------------
+   Module 5 — Before / after
+   --------------------------------------------------------------------- */
+
+.before-after {
+  background: var(--color-bg-page);
+}
+
+.disclaimer {
+  margin-top: var(--space-5);
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  max-width: 65ch;
+}
+
+/* ---------------------------------------------------------------------
+   Module 6 — What it can help improve
+   --------------------------------------------------------------------- */
+
+.improve {
+  background: var(--color-bg-surface-alt);
+}
+
+.improve__grid {
+  display: grid;
+  gap: var(--space-7);
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .improve__grid {
+    grid-template-columns: 1.1fr 0.9fr;
+  }
+}
+
+.improve__media .placeholder-img {
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+/* ---------------------------------------------------------------------
+   Module 7 — Areas treated
+   --------------------------------------------------------------------- */
+
+.areas {
+  background: var(--color-bg-page);
+}
+
+/* ---------------------------------------------------------------------
+   Module 8 — $500 bonus (premium, not coupon-style)
+   --------------------------------------------------------------------- */
+
+.bonus-callout {
+  background: linear-gradient(135deg, var(--color-brand-secondary) 0%, var(--color-bg-surface-alt) 100%);
+}
+
+.bonus-callout__inner {
+  max-width: 720px;
+  text-align: center;
+  display: grid;
+  justify-items: center;
+  gap: var(--space-4);
+}
+
+.bonus-callout h2 {
+  font-size: var(--text-xl);
+}
+
+/* ---------------------------------------------------------------------
+   Module 10 — FAQ
+   --------------------------------------------------------------------- */
+
+.faq {
+  background: var(--color-bg-surface-alt);
+}
+
+.faq h2 {
+  margin-bottom: var(--space-6);
+}
+
+/* ---------------------------------------------------------------------
+   Module 11 — Form section
+   --------------------------------------------------------------------- */
+
+.consult-form-section {
+  background: var(--color-bg-page);
+}
+
+.consult-form-section__grid {
+  display: grid;
+  gap: var(--space-8);
+}
+
+@media (min-width: 1024px) {
+  .consult-form-section__grid {
+    grid-template-columns: 0.85fr 1.15fr;
+    align-items: start;
+  }
+}
+
+.consult-form-section__copy {
+  max-width: 50ch;
+}
+
+/* ---------------------------------------------------------------------
+   Module 12 — Final CTA
+   --------------------------------------------------------------------- */
+
+.final-cta {
+  background: var(--color-bg-inverse);
+  color: var(--color-text-inverse);
+}
+
+.final-cta h2 {
+  color: var(--color-text-inverse);
+}
+
+.final-cta p {
+  color: var(--color-text-inverse-muted);
+}
+
+.final-cta__inner {
+  max-width: 760px;
+  text-align: center;
+  display: grid;
+  justify-items: center;
+  gap: var(--space-4);
+}
+
+.final-cta__ctas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-4);
+  margin-block: var(--space-3);
+}
+
+.contact-block {
+  margin-top: var(--space-6);
+  font-style: normal;
+  color: var(--color-text-inverse-muted);
+  line-height: var(--leading-relaxed);
+}
+
+.contact-block a {
+  color: var(--color-tech-accent-bright);
+  font-weight: 700;
+}
+
+/* ---------------------------------------------------------------------
+   Footer
+   --------------------------------------------------------------------- */
+
+.site-footer {
+  padding-block: var(--space-6);
+  padding-bottom: calc(var(--space-6) + 72px); /* clear the mobile sticky bar */
+  background: var(--color-bg-inverse);
+  color: var(--color-text-inverse-muted);
+  text-align: center;
+  font-size: var(--text-xs);
+}
+
+@media (min-width: 1024px) {
+  .site-footer {
+    padding-bottom: var(--space-6);
+  }
+}

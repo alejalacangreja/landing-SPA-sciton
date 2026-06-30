@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 900" role="img" aria-label="Placeholder image">
+  <rect width="700" height="900" fill="#F4E9E3"/>
+  <path d="M0 0L700 900M700 0L0 900" stroke="#E6B9B4" stroke-width="2"/>
+  <rect x="32" y="32" width="636" height="836" fill="none" stroke="#92644F" stroke-width="2" stroke-dasharray="10 8"/>
+  <text x="350" y="442" text-anchor="middle" font-family="Georgia, serif" font-size="24" fill="#7A5140">Skin close-up placeholder</text>
+  <text x="350" y="474" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#6B5D54">Replace with renewed-skin close-up photo</text>
+</svg>

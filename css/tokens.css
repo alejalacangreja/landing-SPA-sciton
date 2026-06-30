@@ -1,0 +1,157 @@
+/* ==========================================================================
+   DESIGN TOKENS — Regenerative Med Spa × HALO TRIBRID
+   Warm editorial spa shell + cool precision-tech insert (module 4 only).
+   Every other CSS file should consume the SEMANTIC layer, never the raw
+   palette directly, so the brand can be retuned from this single file.
+   ========================================================================== */
+
+:root {
+  /* ---------------------------------------------------------------------
+     RAW PALETTE — colors lifted from the real regensmedspa.com brand
+     --------------------------------------------------------------------- */
+  --raw-cream: #fbf6f2;
+  --raw-blush-wash: #f4e9e3;
+  --raw-white: #ffffff;
+  --raw-blush-rose: #e6b9b4;
+  --raw-deep-rose: #d28e8e;
+  --raw-terracotta: #92644f;
+  --raw-terracotta-dark: #7a5140;
+  --raw-charcoal-warm: #2e2620;
+  --raw-charcoal-muted: #6b5d54;
+  --raw-border-warm: #e7d9d0;
+
+  /* tech insert — strictly scoped to the wavelength module + credibility badges */
+  --raw-ink: #1a1d21;
+  --raw-ink-elevated: #23272c;
+  --raw-steel: #9fb8c4;
+  --raw-steel-bright: #c7dce3;
+  --raw-ink-border: #343a40;
+
+  --raw-success: #5b7a5e;
+  --raw-error: #b3504a;
+
+  /* ---------------------------------------------------------------------
+     SEMANTIC ROLES — components must reference these, never --raw-*
+     --------------------------------------------------------------------- */
+  --color-bg-page: var(--raw-cream);
+  --color-bg-surface: var(--raw-white);
+  --color-bg-surface-alt: var(--raw-blush-wash);
+  --color-bg-inverse: var(--raw-ink);
+  --color-bg-inverse-elevated: var(--raw-ink-elevated);
+
+  --color-text-primary: var(--raw-charcoal-warm);
+  --color-text-muted: var(--raw-charcoal-muted);
+  --color-text-inverse: var(--raw-white);
+  --color-text-inverse-muted: var(--raw-steel-bright);
+
+  --color-brand-primary: var(--raw-terracotta);
+  --color-brand-primary-hover: var(--raw-terracotta-dark);
+  --color-brand-secondary: var(--raw-blush-rose);
+  --color-brand-accent: var(--raw-deep-rose);
+
+  --color-tech-accent: var(--raw-steel);
+  --color-tech-accent-bright: var(--raw-steel-bright);
+
+  --color-border: var(--raw-border-warm);
+  --color-border-inverse: var(--raw-ink-border);
+  --color-focus-ring: var(--raw-terracotta-dark);
+
+  --color-success: var(--raw-success);
+  --color-error: var(--raw-error);
+  --color-overlay-scrim: rgb(26 22 19 / 0.55);
+
+  /* ---------------------------------------------------------------------
+     TYPOGRAPHY
+     --------------------------------------------------------------------- */
+  --font-display: "Philosopher", Georgia, "Times New Roman", serif;
+  --font-body: "Raleway", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono-tech: "JetBrains Mono", "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+
+  --text-xs: clamp(0.75rem, 0.72rem + 0.15vw, 0.8125rem);
+  --text-sm: clamp(0.875rem, 0.84rem + 0.18vw, 0.9375rem);
+  --text-base: clamp(1rem, 0.96rem + 0.2vw, 1.0625rem);
+  --text-md: clamp(1.125rem, 1.05rem + 0.35vw, 1.25rem);
+  --text-lg: clamp(1.375rem, 1.25rem + 0.6vw, 1.75rem);
+  --text-xl: clamp(1.75rem, 1.5rem + 1.2vw, 2.5rem);
+  --text-2xl: clamp(2.25rem, 1.8rem + 2vw, 3.5rem);
+  --text-3xl: clamp(2.75rem, 2.1rem + 3vw, 4.5rem);
+
+  --leading-tight: 1.1;
+  --leading-snug: 1.3;
+  --leading-normal: 1.6;
+  --leading-relaxed: 1.75;
+
+  --tracking-tight: -0.02em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.06em;
+  --tracking-widest: 0.14em;
+
+  /* ---------------------------------------------------------------------
+     SPACING — 8px rhythm
+     --------------------------------------------------------------------- */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-9: 6rem;
+  --space-10: 8rem;
+
+  --section-padding-block: clamp(var(--space-8), 8vw, var(--space-10));
+  --container-max-width: 1280px;
+  --container-padding-inline: clamp(var(--space-4), 5vw, var(--space-7));
+
+  /* ---------------------------------------------------------------------
+     RADIUS — soft on the warm side, near-square on the tech insert
+     --------------------------------------------------------------------- */
+  --radius-sm: 4px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-pill: 999px;
+  --radius-card: var(--radius-md);
+  --radius-card-tech: var(--radius-sm);
+
+  /* ---------------------------------------------------------------------
+     SHADOW — warm, diffuse (never neutral gray)
+     --------------------------------------------------------------------- */
+  --shadow-sm: 0 1px 2px rgb(146 100 79 / 0.08);
+  --shadow-md: 0 8px 24px rgb(146 100 79 / 0.12);
+  --shadow-lg: 0 20px 48px rgb(146 100 79 / 0.16);
+  --shadow-focus: 0 0 0 3px rgb(122 81 64 / 0.35);
+  --shadow-tech: 0 12px 32px rgb(0 0 0 / 0.35);
+
+  /* ---------------------------------------------------------------------
+     MOTION
+     --------------------------------------------------------------------- */
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out-soft: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-fast: 150ms;
+  --duration-base: 350ms;
+  --duration-slow: 700ms;
+  --reveal-stagger-step: 90ms;
+
+  /* ---------------------------------------------------------------------
+     Z-INDEX SCALE
+     --------------------------------------------------------------------- */
+  --z-base: 0;
+  --z-sticky-header: 100;
+  --z-announcement-bar: 105;
+  --z-sticky-mobile-bar: 110;
+  --z-skip-link: 1100;
+
+  /* Breakpoints (documented only — mirrored as JS constants in utils.js
+     since custom properties cannot be read inside @media conditions):
+     sm: 480px · md: 768px · lg: 1024px · xl: 1280px */
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-fast: 0ms;
+    --duration-base: 0ms;
+    --duration-slow: 0ms;
+    --reveal-stagger-step: 0ms;
+  }
+}
