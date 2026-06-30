@@ -50,6 +50,10 @@
   margin-bottom: var(--space-3);
 }
 
+.hero-heading__highlight {
+  color: var(--color-error);
+}
+
 .hero__subheadline {
   font-size: var(--text-md);
   font-weight: 600;
