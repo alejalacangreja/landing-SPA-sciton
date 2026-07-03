@@ -12,6 +12,9 @@ Desktop.ini
 node_modules/
 npm-debug.log*
 
+# Vercel CLI local project link
+.vercel
+
 # Env / secrets
 .env
 .env.*
@@ -26,3 +29,4 @@ npm-debug.log*
 
 # Claude Code skill assets (tooling, not site content)
 skills/
+.env*
