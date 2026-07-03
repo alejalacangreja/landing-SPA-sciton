@@ -19,15 +19,40 @@
 <body>
 <a class="skip-link" href="#main">Skip to main content</a>
 
-<header class="site-header">
+<header class="site-header" id="site-header">
   <div class="container site-header__inner">
     <a href="index.html" class="site-header__logo">
-      <img src="assets/images/brand/spa-logo-placeholder.svg" alt="Regenerative Med Spa" width="180" height="42" />
+      <img src="Img/__logo-cobrandig.png" alt="Regenerative Med Spa x HALO TRIBRID" width="205" height="34" />
     </a>
-    <div class="site-header__actions">
-      <a class="site-header__phone" href="tel:4077305600">407.730.5600</a>
+
+    <nav class="site-header__nav" aria-label="Section navigation">
+      <a href="index.html#hero">Home</a>
+      <a href="index.html#concerns">Treatment</a>
+      <a href="index.html#skin-layers">Technology</a>
+      <a href="index.html#results">Before &amp; After</a>
+      <a href="index.html#reviews">Reviews</a>
+      <a href="index.html#faq">FAQ</a>
+    </nav>
+
+    <div class="site-header__right">
+      <button type="button" class="site-header__menu-toggle" id="site-header-menu-toggle" aria-expanded="false" aria-controls="site-header-mobile-nav" aria-label="Open menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+
+      <div class="site-header__actions">
+        <a class="btn btn--primary" href="index.html#consult-form">Book my consultation</a>
+      </div>
     </div>
   </div>
+
+  <nav class="site-header__mobile-nav" id="site-header-mobile-nav" aria-label="Section navigation" hidden>
+    <a href="index.html#hero">Home</a>
+    <a href="index.html#concerns">Treatment</a>
+    <a href="index.html#skin-layers">Technology</a>
+    <a href="index.html#results">Before &amp; After</a>
+    <a href="index.html#reviews">Reviews</a>
+    <a href="index.html#faq">FAQ</a>
+  </nav>
 </header>
 
 <main id="main">
@@ -45,8 +70,10 @@
         During your consultation, we will review your skin concerns, discuss your goals and
         determine whether this treatment is right for you.
       </p>
-      <a class="btn btn--primary btn--lg" href="tel:4077305600">Call us now</a>
-      <p class="ty-confirmation__contact">407.730.5600</p>
+      <div class="ty-confirmation__ctas">
+        <a class="btn btn--primary btn--lg" href="tel:4077305600">Call us now</a>
+        <a class="btn btn--outline btn--lg" href="https://regensmedspa.com/" target="_blank" rel="noopener noreferrer">Our services</a>
+      </div>
     </div>
   </section>
 

@@ -3,8 +3,14 @@
    main component system; only the confirmation hero is page-specific.
    ========================================================================== */
 
+/* This page has no announcement bar above the header, unlike index.html
+   (where .site-header sits sticky at top:44px to clear it). */
+.site-header {
+  top: 0;
+}
+
 .ty-confirmation {
-  padding-top: clamp(var(--space-8), 8vw, var(--space-10));
+  padding-top: clamp(var(--space-7), 6vw, var(--space-8));
   background: linear-gradient(180deg, var(--color-bg-surface-alt) 0%, var(--color-bg-page) 60%);
 }
 
@@ -13,7 +19,12 @@
   text-align: center;
   display: grid;
   justify-items: center;
-  gap: var(--space-4);
+  gap: var(--space-3);
+}
+
+.ty-confirmation__inner p {
+  margin: 0;
+  color: var(--color-text-muted);
 }
 
 .ty-confirmation__icon {
@@ -21,16 +32,21 @@
   place-items: center;
   width: 80px;
   height: 80px;
-  margin-bottom: var(--space-2);
   color: var(--color-brand-primary);
-  background: var(--color-brand-secondary);
+  background: var(--color-brand-soft);
   border-radius: var(--radius-pill);
 }
 
-.ty-confirmation__contact {
-  font-weight: 700;
-  font-size: var(--text-md);
-  color: var(--color-brand-primary);
+#ty-heading {
+  font-size: var(--text-xl);
+}
+
+.ty-confirmation__ctas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-4);
+  margin-top: var(--space-2);
 }
 
 .improve h2 {

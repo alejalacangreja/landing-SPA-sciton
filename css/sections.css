@@ -1035,7 +1035,7 @@
   font-family: var(--font-display);
   font-size: calc(var(--text-md) + 5pt);
   font-weight: 700;
-  color: #f9c7d6;
+  color: var(--color-text-inverse);
 }
 
 .consult-form {
@@ -1051,6 +1051,41 @@
 .consult-form .form-field textarea,
 .consult-form .multiselect__trigger {
   background: rgb(255 255 255 / 0.85);
+}
+
+/* The default brick-red error tone barely reads against the hot-pink glass
+   form — swap to a bright gold (matching the star-rating accent used
+   elsewhere on the site) so validation messages actually pop here. */
+.consult-form .form-field__error {
+  color: #ffcc33;
+  font-weight: 700;
+}
+
+.consult-form .form-field input.is-invalid {
+  border-color: #ffcc33;
+}
+
+.consult-form .checkbox-option input.is-invalid {
+  outline-color: #ffcc33;
+}
+
+/* The submit button was the same hot pink as the section background —
+   nearly invisible. Reuse the same soft-pink-on-pink pattern already
+   established for the Module 2 CTA on a matching background. */
+.consult-form .btn--primary {
+  background: var(--color-brand-soft);
+  color: var(--color-text-primary);
+}
+
+.consult-form .btn--primary:hover {
+  background: var(--color-text-inverse);
+}
+
+/* The dropdown panel itself sits on an opaque white surface, not the pink
+   glass background — its option labels need the standard dark palette
+   color, not the translucent white used for labels on the glass form. */
+.consult-form .form-field .multiselect__option {
+  color: var(--color-text-primary);
 }
 
 .consult-form .checkbox-option {
