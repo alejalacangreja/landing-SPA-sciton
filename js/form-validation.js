@@ -1,13 +1,28 @@
+import { parsePhoneNumber } from "https://esm.sh/libphonenumber-js@1.13.8/min";
 import { RECAPTCHA_SITE_KEY } from "../config.js";
 import { qs } from "./utils.js";
+
+// Boulevard rejects contact creation when the phone number is malformed (e.g.
+// too many digits), so we validate per-country with libphonenumber-js instead
+// of a loose length check. Numbers without a "+" country code are assumed to
+// be US, since that's where the spa is located and where most leads are from.
+const DEFAULT_PHONE_COUNTRY = "US";
+
+function parseLeadPhoneNumber(value) {
+  try {
+    return parsePhoneNumber(value, DEFAULT_PHONE_COUNTRY);
+  } catch (error) {
+    return undefined;
+  }
+}
 
 const REQUIRED_FIELDS = [
   { id: "first-name", message: "Please enter your first name." },
   { id: "last-name", message: "Please enter your last name." },
   {
     id: "phone",
-    message: "Please enter a valid phone number.",
-    validate: (value) => /^[0-9 ()+-]{7,}$/.test(value),
+    message: "Please enter a valid phone number, including area code.",
+    validate: (value) => Boolean(parseLeadPhoneNumber(value)?.isValid()),
   },
   { id: "email", message: "Please enter a valid email address." },
 ];
@@ -123,6 +138,9 @@ async function submitForm(formData, statusEl, form) {
   MULTI_VALUE_FIELDS.forEach((name) => {
     payload[name] = formData.getAll(name).join(", ");
   });
+  // Validation already confirmed this parses; normalize to E.164 (e.g.
+  // "+14075551234") so Boulevard always receives a clean, unambiguous format.
+  payload.phone = parseLeadPhoneNumber(payload.phone).number;
 
   const result = await submitLead(payload);
   if (!result.success) {
