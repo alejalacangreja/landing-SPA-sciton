@@ -1068,12 +1068,13 @@
   background: rgb(255 255 255 / 0.85);
 }
 
-/* The default brick-red error tone barely reads against the hot-pink glass
-   form — swap to a bright gold (matching the star-rating accent used
-   elsewhere on the site) so validation messages actually pop here. */
 .consult-form .form-field__error {
-  color: #ffcc33;
+  color: #333333;
   font-weight: 700;
+}
+
+.consult-form .form-status.is-error {
+  color: #333333;
 }
 
 .consult-form .form-field input.is-invalid {
